@@ -25,7 +25,7 @@ type1_devices = {
     "STMT002": {"deployed_at": "2025-2-12", "threshold": 0.5, "sensor": 1},
     "STMT003": {"deployed_at": "2025-1-9", "threshold": 0.23, "sensor": 6},
     "STMT004": {"deployed_at": "2025-1-12", "threshold": 0.15, "sensor": 5},
-    "JKFL001": {"deployed_at": "2025-2-14", "threshold": "OFFLINE", "sensor": 6},
+    "JKFL001": {"deployed_at": "2025-2-14", "threshold":0.10, "sensor": 6},
     "JKFL002": {"deployed_at": "2025-2-14", "threshold": 0.17, "sensor": 6},
     "JKFL003": {"deployed_at": "2025-1-7", "threshold": 0.41, "sensor": 6},
     "HFLV002": {"deployed_at": "2025-2-26", "threshold": 0.41, "sensor": 6},
@@ -263,7 +263,7 @@ def main():
     # Create scheduler
     scheduler = BackgroundScheduler()
     
-    # Schedule the job to run every 15 minutes
+    # Schedule the job to run every day 
     scheduler.add_job(process_all_devices, 'interval', minutes=1440)
     
     # Start the scheduler
